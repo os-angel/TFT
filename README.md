@@ -1,5 +1,5 @@
 # Temporal Fusion Transformer (TFT): Implementation and Optimization Using Optuna
-
+Medium Post: [https://medium.com/@angelAjcabul/temporal-fusion-transformer-tft-implementation-and-optimization-using-optuna-d87c8aacfb3a]
 ## Multi-Horizon Forecasting
 
 Multi-horizon time series forecasting is one of the most critical challenges in machine learning, as it enables the projection of future scenarios based on historical patterns and exogenous variables. Its applications span a wide range of industries—from retail sales forecasting and food production planning to more routine aspects such as price fluctuations of fruits and vegetables in the market.
