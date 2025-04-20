@@ -27,7 +27,7 @@ To address these challenges, a novel attention-based architecture was proposed: 
 
 With a clearer understanding of the base forecasting equation, it is possible to delve into the architecture that enables the Temporal Fusion Transformer (TFT) to operate effectively. The following provides an overview of its key components, though a more in-depth explanation is available in the [original paper](https://arxiv.org/abs/1912.09363).
 
-![TFT Model Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*t4Wvqv-I259N4KEAjmaO4g.png)
+![TFT Model Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*77WyrUknM9W-rEOVh_ocRg.png)
 
 
 ### Block 1 — Known Future Inputs
@@ -35,23 +35,27 @@ With a clearer understanding of the base forecasting equation, it is possible to
 This part processes both historical data and known future inputs using an LSTM-based decoder, capable of capturing long-term dependencies and generating coherent output sequences.
 
 The **Add & Norm** layer stabilizes gradient flow by normalizing activations, while skip connections preserve critical original features, enhancing predictive performance.
+![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*j5GK3ITDvsDEQm7kVzoO_w.png)
 
 ### Block 2 — Past Inputs
 
 This block mirrors the structure of Block 1 but uses an **LSTM Encoder** to capture dependencies from historical data. The encoder compresses these patterns into a context vector used for downstream predictions. Unlike the decoder, the encoder focuses solely on encoding past information, which, in combination with future covariates, improves forecast accuracy.
+![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*beXkJmmvs_ryXr86eLw22w.png)
 
 ### Block 3 — Gated Residual Network (GRN)
 
 The GRN selectively filters relevant information using gating mechanisms. This prevents noisy or redundant inputs from flowing freely through the model, promoting more efficient learning and preserving important signals.
+![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*GG5WRiSY5G6ym6Leqql6Tw.png)
 
 ### Block 4 — Masked Interpretable Multi-Head Attention (MIMA)
 
 This module improves the model's ability to capture complex dependencies by focusing attention on relevant segments of the input. Each attention head captures different aspects (local, global, or contextual), enhancing the richness of the learned representation. In the architecture, arrows indicate how the outputs from GRNs are fed into multiple attention heads in parallel.
-
+![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Tl4fCHH53UXVGA-RiRCl-w.png)
 ### Block 5 — Add & Norm + GRN
 
 After MIMA, outputs are passed through additional Add & Norm layers to stabilize training and integrate residual information. Skip connections from GRNs preserve essential signals, while additional GRNs filter noise, ensuring only the most informative content continues forward.
 
+![TFT Model](https://medium.com/@angelAjcabul/forecasting-con-temporal-fusion-transformer-tft-implementaci%C3%B3n-y-optimizaci%C3%B3n-con-optuna-d94a027b28db)
 ---
 
 ## Temporal Fusion Transformer (TFT) Architecture Summary
