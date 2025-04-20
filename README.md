@@ -59,27 +59,3 @@ After MIMA, outputs are passed through additional Add & Norm layers to stabilize
 Up to this point, we have described the architecture of the Temporal Fusion Transformer (TFT), highlighting how it integrates both historical and known future variables across multiple temporal resolutions. For a deeper analysis of its internal structure and components, it is recommended to consult the original paper.
 
 ---
-
-## TFT Implementation with Optuna
-
-To begin the implementation, we install the `darts` library and import the necessary modules to build and evaluate the model. Leveraging a **GPU** is highly recommended, as it significantly accelerates training and improves efficiency during the hyperparameter optimization process.
-
-### Data Loading and Preprocessing
-
-You can download the datasets from the GitHub repository to easily replicate this workflow. The `electricity.csv` file contains historical electricity consumption data, while `electricity-future.csv` includes future known covariates.
-
-Once loaded, the data is normalized to ensure consistent scaling across all variables. Two separate scalers are used—one for the target series and another for the covariates—to ensure consistent transformation across both past and future inputs.
-
-### Defining the Objective Function for Optimization
-
-An objective function is defined to guide Optuna in exploring combinations of key hyperparameters such as:
-
-- Hidden layer size
-- Number of LSTM layers
-- Number of attention heads
-- Dropout rate
-- Batch size
-- Number of epochs
-
-For each trial, a model is trained and evaluated using historical forecasting and the **RMSE** from denormalized predictions is used as the loss metric to minimize.
-
