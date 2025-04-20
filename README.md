@@ -27,6 +27,9 @@ To address these challenges, a novel attention-based architecture was proposed: 
 
 With a clearer understanding of the base forecasting equation, it is possible to delve into the architecture that enables the Temporal Fusion Transformer (TFT) to operate effectively. The following provides an overview of its key components, though a more in-depth explanation is available in the [original paper](https://arxiv.org/abs/1912.09363).
 
+![TFT Model Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*t4Wvqv-I259N4KEAjmaO4g.png)
+
+
 ### Block 1 — Known Future Inputs
 
 This part processes both historical data and known future inputs using an LSTM-based decoder, capable of capturing long-term dependencies and generating coherent output sequences.
