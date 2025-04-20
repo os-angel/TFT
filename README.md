@@ -26,7 +26,7 @@ To address these challenges, a novel attention-based architecture was proposed: 
 ## TFT Architecture Overview
 
 With a clearer understanding of the base forecasting equation, it is possible to delve into the architecture that enables the Temporal Fusion Transformer (TFT) to operate effectively. The following provides an overview of its key components, though a more in-depth explanation is available in the [original paper](https://arxiv.org/abs/1912.09363).
-![TFT Model Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*77WyrUknM9W-rEOVh_ocRg.png)
+![TFT Model Formula]([https://miro.medium.com/v2/resize:fit:1400/format:webp/1*77WyrUknM9W-rEOVh_ocRg.png](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*t4Wvqv-I259N4KEAjmaO4g.png))
 
 
 
