@@ -55,7 +55,7 @@ This module improves the model's ability to capture complex dependencies by focu
 
 After MIMA, outputs are passed through additional Add & Norm layers to stabilize training and integrate residual information. Skip connections from GRNs preserve essential signals, while additional GRNs filter noise, ensuring only the most informative content continues forward.
 
-![TFT Model](https://medium.com/@angelAjcabul/forecasting-con-temporal-fusion-transformer-tft-implementaci%C3%B3n-y-optimizaci%C3%B3n-con-optuna-d94a027b28db)
+![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lnuZiI2qg6ZqCv-q2Y8pHw.png)
 ---
 
 ## Temporal Fusion Transformer (TFT) Architecture Summary
