@@ -26,8 +26,8 @@ To address these challenges, a novel attention-based architecture was proposed: 
 ## TFT Architecture Overview
 
 With a clearer understanding of the base forecasting equation, it is possible to delve into the architecture that enables the Temporal Fusion Transformer (TFT) to operate effectively. The following provides an overview of its key components, though a more in-depth explanation is available in the [original paper](https://arxiv.org/abs/1912.09363).
-
 ![TFT Model Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*77WyrUknM9W-rEOVh_ocRg.png)
+
 
 
 ### Block 1 — Known Future Inputs
@@ -35,7 +35,7 @@ With a clearer understanding of the base forecasting equation, it is possible to
 This part processes both historical data and known future inputs using an LSTM-based decoder, capable of capturing long-term dependencies and generating coherent output sequences.
 
 The **Add & Norm** layer stabilizes gradient flow by normalizing activations, while skip connections preserve critical original features, enhancing predictive performance.
-![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*j5GK3ITDvsDEQm7kVzoO_w.png)
+![TFT Model Formula](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*77WyrUknM9W-rEOVh_ocRg.png)
 
 ### Block 2 — Past Inputs
 
@@ -51,13 +51,13 @@ The GRN selectively filters relevant information using gating mechanisms. This p
 
 This module improves the model's ability to capture complex dependencies by focusing attention on relevant segments of the input. Each attention head captures different aspects (local, global, or contextual), enhancing the richness of the learned representation. In the architecture, arrows indicate how the outputs from GRNs are fed into multiple attention heads in parallel.
 ![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Tl4fCHH53UXVGA-RiRCl-w.png)
-### Block 5 — Add & Norm + GRN
+
+### Block 5 — Add & Norm  GRN
 
 After MIMA, outputs are passed through additional Add & Norm layers to stabilize training and integrate residual information. Skip connections from GRNs preserve essential signals, while additional GRNs filter noise, ensuring only the most informative content continues forward.
 
-![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lnuZiI2qg6ZqCv-q2Y8pHw.png)
 ---
-
+![TFT Model](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*lnuZiI2qg6ZqCv-q2Y8pHw.png)
 ## Temporal Fusion Transformer (TFT) Architecture Summary
 
 Up to this point, we have described the architecture of the Temporal Fusion Transformer (TFT), highlighting how it integrates both historical and known future variables across multiple temporal resolutions. For a deeper analysis of its internal structure and components, it is recommended to consult the original paper.
